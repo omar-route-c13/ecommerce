@@ -19,10 +19,10 @@ class ProductCounter extends StatefulWidget {
 }
 
 class _ProductCounterState extends State<ProductCounter> {
-  late int _counter = widget.initialValue;
-
   @override
   Widget build(BuildContext context) {
+    int counter = widget.initialValue;
+
     return Container(
       decoration: BoxDecoration(
         color: ColorManager.primary,
@@ -33,9 +33,9 @@ class _ProductCounterState extends State<ProductCounter> {
         children: [
           InkWell(
             onTap: () {
-              if (_counter == 1) return;
-              setState(() => _counter--);
-              widget.onDecrement(_counter);
+              if (counter == 1) return;
+              setState(() => counter--);
+              widget.onDecrement(counter);
             },
             child: Icon(
               Icons.remove_circle_outline,
@@ -47,7 +47,7 @@ class _ProductCounterState extends State<ProductCounter> {
             width: 18.w,
           ),
           Text(
-            '$_counter',
+            '$counter',
             style: getMediumStyle(color: ColorManager.white)
                 .copyWith(fontSize: 18.sp),
           ),
@@ -56,8 +56,8 @@ class _ProductCounterState extends State<ProductCounter> {
           ),
           InkWell(
             onTap: () {
-              setState(() => _counter++);
-              widget.onIncrement(_counter);
+              setState(() => counter++);
+              widget.onIncrement(counter);
             },
             child: Icon(
               Icons.add_circle_outline,

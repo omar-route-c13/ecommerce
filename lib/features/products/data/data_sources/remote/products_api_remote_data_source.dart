@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:ecommerce/core/constants.dart';
 import 'package:ecommerce/core/error/exceptions.dart';
 import 'package:ecommerce/features/products/data/data_sources/remote/products_remote_data_source.dart';
-import 'package:ecommerce/features/products/data/models/products_response/products_response.dart';
+import 'package:ecommerce/features/products/data/models/products_response.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: ProductsRemoteDataSource)
